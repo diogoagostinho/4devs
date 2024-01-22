@@ -24,13 +24,13 @@
 
 <h3 align="left">Libraries used</h3>
 
-- **[N/A](#)** - For stuff
+- **[Sass](https://www.npmjs.com/package/sass)** - For CSS
 
 ###
 
 <h3 align="left">Fonts used</h3>
 
-- **[N/A](#)**
+- **[Satoshi](https://www.fontshare.com/fonts/satoshi)**
 
 ###
 

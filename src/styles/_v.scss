@@ -1,0 +1,107 @@
+$screen-sm: 480px;
+$screen-md: 780px;
+$screen-lg: 1020px;
+$screen-xl: 1440px;
+
+$black: #000000;
+$darkerText: #333333;
+$lighterText: #888888;
+$white: #ffffff;
+$grey: #f5f5f5;
+$purple: #3b49df;
+$darkerPurple: #202ec5;
+$lighterPurple: #e9eafc;
+
+$smr: 1rem;
+$mdr: 2rem;
+$smp: 6px;
+$mdp: 10px;
+
+$fss: 1.6ch;
+$fsm: 1.8ch;
+$fsl: 2ch;
+$fsxl: 2.6ch;
+$fsxxl: 3.4ch;
+
+* {
+  font-family: "Satoshi", "sans-serif";
+  margin: 0;
+  overflow: hidden;
+}
+
+button {
+  padding: $mdp $smr;
+  font-size: $fss;
+  font-weight: 600;
+  border-radius: 6px;
+}
+.unfilled {
+  background: $white;
+  border: 1px solid $purple;
+  color: $purple;
+  width: fit-content;
+  cursor: pointer;
+}
+.unfilled:hover {
+  background: $purple;
+  color: $white;
+  text-decoration: underline;
+}
+.filled {
+  background: $purple;
+  color: $white;
+  width: 100%;
+  border: none;
+  transition: all 0.1s ease-in;
+}
+.filled:hover {
+  background: $darkerPurple;
+}
+
+h1 {
+  font-size: $fsxxl;
+  font-weight: 800;
+}
+h2 {
+  font-size: $fsxl;
+  font-weight: 700;
+}
+h3 {
+  font-size: $fsl;
+  font-weight: 400;
+  color: $darkerText;
+}
+.active {
+  font-weight: 600;
+  color: $black;
+}
+
+p {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: $purple;
+}
+
+.side-text {
+  font-size: $fss;
+  color: $darkerText;
+}
+.content-text {
+  font-size: $fsm;
+}
+.date-text {
+  color: $lighterText;
+}
+.user-text {
+  font-weight: 600;
+  color: $darkerText;
+}
+.tag-text {
+  color: $darkerText;
+}

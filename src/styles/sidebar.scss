@@ -1,0 +1,21 @@
+@use "v";
+
+.side-option {
+  display: flex;
+  gap: v.$smr;
+  width: 100%;
+  padding: v.$mdp;
+  border-radius: 6px;
+  height: 1.6rem;
+  align-items: center;
+  p {
+    font-weight: 600;
+  }
+}
+.side-option:hover {
+  background: v.$lighterPurple;
+  p {
+    color: v.$purple;
+    text-decoration: underline;
+  }
+}
