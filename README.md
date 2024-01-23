@@ -45,6 +45,13 @@
 
 ###
 
+<h3 align="left">To Do:</h3>
+
+- Make zoom out responsive
+- Change logo
+
+###
+
 ---
 
 <p align="center">🚀 Have a look at my <a href="https://github.com/diogoagostinho">Github Profile</a></p>
