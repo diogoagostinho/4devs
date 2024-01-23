@@ -7,7 +7,7 @@
 ###
 
 <div align="center">
-  <img height="40" src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/test.png"  />
+  <img height="40" src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/4devs.png"  />
 </div>
 
 ###
@@ -16,6 +16,8 @@
   <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/react.png" height="40" alt="react logo"  />
   <img width="12" />
   <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/typescript.png" height="40" alt="typescript logo"  />
+  <img width="12" />
+  <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/vite.png" height="40" alt="typescript logo"  />
 </div>
 
 ###
