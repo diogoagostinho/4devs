@@ -2,7 +2,7 @@
 
 ###
 
-<h5 align="center">A blog website made with React TS + SQLite</h5>
+<h5 align="center">A blog website made with React TS + MySQL</h5>
 
 ###
 
@@ -17,7 +17,9 @@
   <img width="12" />
   <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/typescript.png" height="40" alt="typescript logo"  />
   <img width="12" />
-  <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/vite.png" height="40" alt="typescript logo"  />
+  <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/vite.png" height="40" alt="vite logo"  />
+  <img width="12" />
+  <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/mysql.png" height="40" alt="mysql logo"  />
 </div>
 
 ###
