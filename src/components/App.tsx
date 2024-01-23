@@ -1,4 +1,5 @@
 import "../styles/_v.scss";
+import "../styles/app.scss";
 
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
@@ -12,8 +13,12 @@ function App() {
           <Navbar />
         </div>
         <div className="app__bottom">
-          <Sidebar />
-          <Home />
+          <div className="app__bottom-left">
+            <Sidebar />
+          </div>
+          <div className="app__bottom-right">
+            <Home />
+          </div>
         </div>
       </div>
     </>

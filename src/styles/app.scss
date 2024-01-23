@@ -1,0 +1,13 @@
+@use "v";
+
+.app__bottom {
+  background: v.$grey;
+  display: flex;
+}
+
+.app__bottom-left {
+  width: 50%;
+}
+.app__bottom-right {
+  width: 100%;
+}

@@ -1,6 +1,6 @@
 @use "v";
 
-.side-option {
+.sidebar__item-content {
   display: flex;
   gap: v.$smr;
   width: 100%;
@@ -12,7 +12,10 @@
     font-weight: 600;
   }
 }
-.side-option:hover {
+.sidebar__item {
+  margin: 0 1rem;
+}
+.sidebar__item:hover {
   background: v.$lighterPurple;
   p {
     color: v.$purple;

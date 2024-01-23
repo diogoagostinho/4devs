@@ -1,0 +1,51 @@
+@use "v";
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: v.$mdp;
+  justify-content: space-between;
+  background: v.$white;
+}
+
+.navbar__left,
+.navbar__right {
+  width: 100%;
+}
+
+.navbar__left {
+  display: flex;
+  align-items: center;
+  gap: v.$mdp;
+}
+
+.navbar__right {
+  button {
+    float: right;
+  }
+}
+
+.navbar-image {
+  width: 50px;
+  height: 50px;
+
+  img {
+    width: 100%;
+    border-radius: 6px;
+  }
+}
+
+.navbar-search {
+  height: 100%;
+  width: 70%;
+  input {
+    font-size: 1.4ch;
+    font-weight: 500;
+    height: 100%;
+    width: 70%;
+    padding: 10px 20px;
+    border-radius: v.$smp;
+    border: 1.5px solid v.$lighterText;
+    background: transparent;
+  }
+}
