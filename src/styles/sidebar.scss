@@ -5,15 +5,15 @@
   gap: v.$smr;
   width: 100%;
   padding: v.$mdp;
-  border-radius: 6px;
-  height: 1.6rem;
+  height: 1.4rem;
   align-items: center;
   p {
     font-weight: 600;
   }
 }
 .sidebar__item {
-  margin: 0 1rem;
+  margin: 0 10px;
+  border-radius: 6px;
 }
 .sidebar__item:hover {
   background: v.$lighterPurple;
