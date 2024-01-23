@@ -1,0 +1,34 @@
+@use "v";
+
+.post {
+  height: fit-content;
+  border-radius: 10px;
+  background: v.$white;
+  box-shadow: 0 0 2px 0 #00000050;
+  margin: 10px;
+}
+
+.post__content-bottom {
+  padding: 1rem 4rem;
+}
+.post__author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.post__author-image {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    border-radius: 9999px;
+  }
+}
+.post__title-desc {
+  margin: 1.4rem 0;
+}
+.post__tags {
+  display: flex;
+  gap: 1rem;
+}

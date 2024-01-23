@@ -1,5 +1,9 @@
 @use "v";
 
+.sidebar {
+  margin: 0 10px;
+}
+
 .sidebar__item-content {
   display: flex;
   gap: v.$smr;
@@ -12,7 +16,6 @@
   }
 }
 .sidebar__item {
-  margin: 0 10px;
   border-radius: 6px;
 }
 .sidebar__item:hover {
@@ -21,4 +24,8 @@
     color: v.$purple;
     text-decoration: underline;
   }
+}
+
+.navbar__bottom {
+  padding: v.$mdp;
 }

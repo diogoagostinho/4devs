@@ -44,6 +44,15 @@ function Sidebar() {
             </div>
           </a>
         </div>
+        <div className="navbar__bottom">
+          <p className="user-text">Socials</p>
+          <div className="navbar__socials">
+            <div className="navbar__socials-icon">Github</div>
+            <div className="navbar__socials-icon">Twitter</div>
+            <div className="navbar__socials-icon">LinkedIn</div>
+            <div className="navbar__socials-icon">DEV.to</div>
+          </div>
+        </div>
       </div>
     </>
   );
