@@ -7,7 +7,7 @@ function Navbar() {
         <div className="navbar__content">
           <div className="navbar__left">
             <div className="navbar-image">
-              <img src="/4devs-icon-blue.png" />
+              <img src="/4devs-letters-blue.png" />
             </div>
             <div className="navbar-search">
               <input type="text" placeholder="🔍 Search..." />
