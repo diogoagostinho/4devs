@@ -24,6 +24,7 @@ function Home() {
         </div>
         <div className="home__content">
           <Post />
+          <Post />
         </div>
       </div>
     </>

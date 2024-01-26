@@ -2,10 +2,25 @@
 
 .home__orderby {
   display: flex;
-  gap: 1rem;
+  gap: 0.6rem;
   margin-left: 1rem;
 }
 
 .home {
   margin: 0 1rem;
+}
+
+.home__orderby-item {
+  background: transparent;
+  padding: 0.8rem;
+  border-radius: 10px;
+  transition: all 0.08s ease-in;
+}
+.home__orderby-item:hover {
+  background: v.$white;
+  cursor: pointer;
+
+  h3 {
+    color: v.$purple;
+  }
 }
