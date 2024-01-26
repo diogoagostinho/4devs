@@ -1,0 +1,43 @@
+@use "v";
+
+.postpage {
+  width: 100%;
+}
+
+.postpage__content {
+  border-radius: 10px;
+  background: v.$white;
+  box-shadow: 0 0 2px 0 #00000050;
+  margin: 10px;
+}
+.postpage__content-top {
+  max-height: 300px;
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+.postpage__content-bottom {
+  padding: 1rem 3.6rem;
+}
+
+.onposttag {
+  padding: 1.4rem 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.onposttitle {
+  margin-top: 0;
+  p {
+    margin-top: 1rem;
+  }
+  hr {
+    opacity: 20%;
+  }
+}
+
+.postpage__header {
+  margin-bottom: 2rem;
+}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/post.scss";
 
 function Post() {
@@ -15,14 +16,17 @@ function Post() {
                 <img src="/userimages/diogoagostinho.jpg" alt="" />
               </div>
               <div className="post__author-info">
-                <p className="user-text">Diogo Agostinho</p>
+                <p className="user-text">
+                  <a href="#">Diogo Agostinho</a>
+                </p>
+
                 <p className="date-text">Jan 22, 2024</p>
               </div>
             </div>
 
             <div className="post__title-desc">
               <h1>
-                <a href="">Top 10 Front-End Tools of 2024</a>
+                <Link to="/post">Top 10 Front-End Tools of 2024</Link>
               </h1>
               <p>
                 Who doesn't love a good front-end tool? In this roundup, you'll
