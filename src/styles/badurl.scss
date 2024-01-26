@@ -1,0 +1,24 @@
+@use "v";
+
+.badurl {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: 8ch;
+  }
+  h2 {
+    font-size: 3ch;
+  }
+  p {
+    margin-top: 1rem;
+  }
+  a {
+    color: v.$purple;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}

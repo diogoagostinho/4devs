@@ -49,6 +49,9 @@
 
 - Make zoom out responsive
 - Change logo
+- Lazy loader for the posts
+- Transitions
+- Connect DB
 
 ###
 

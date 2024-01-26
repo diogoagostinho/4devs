@@ -1,48 +1,49 @@
 import "../styles/sidebar.scss";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   return (
     <>
       <div className="sidebar">
         <div className="sidebar__item">
-          <a href="#">
+          <Link to="/">
             <div className="sidebar__item-content">
               <div>🏠</div>
               <div>
                 <p>Home</p>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
         <div className="sidebar__item">
-          <a href="#">
+          <Link to="/tags">
             <div className="sidebar__item-content">
               <div>🏷️</div>
               <div>
                 <p>Tags</p>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
         <div className="sidebar__item">
-          <a href="#">
+          <Link to="/faq">
             <div className="sidebar__item-content">
               <div>💡</div>
               <div>
                 <p>FAQ</p>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
         <div className="sidebar__item">
-          <a href="#">
+          <Link to="/about">
             <div className="sidebar__item-content">
               <div>✨</div>
               <div>
                 <p>About Me</p>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
         <div className="navbar__bottom">
           <p className="user-text">Socials</p>

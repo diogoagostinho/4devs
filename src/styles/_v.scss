@@ -29,6 +29,10 @@ $fsxxl: 3.4ch;
   overflow-x: hidden;
 }
 
+html {
+  background: $grey;
+}
+
 body {
   scroll-behavior: smooth;
 }
