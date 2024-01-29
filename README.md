@@ -7,7 +7,7 @@
 ###
 
 <div align="center">
-  <img height="40" src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/4devs.png"  />
+  <img height="60" src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/4devs.png"  />
 </div>
 
 ###
