@@ -20,6 +20,8 @@
   <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/vite.png" height="40" alt="vite logo"  />
   <img width="12" />
   <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/mysql.png" height="40" alt="mysql logo"  />
+  <img width="12" />
+  <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/express.png" height="40" alt="express logo"  />
 </div>
 
 ###
@@ -30,6 +32,7 @@
 
 - **[Sass](https://www.npmjs.com/package/sass)** - For CSS
 - **[React Router Dom](https://www.npmjs.com/package/react-router-dom)** - For routing
+- **[Express](https://www.npmjs.com/package/express)** - For backend
 
 ###
 
