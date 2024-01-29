@@ -51,6 +51,18 @@
 - Lazy loader for the posts
 - Transitions
 - Connect DB
+- Search function
+
+- Navbar
+- ~~Sidebar~~
+- Homepage
+- ~~About~~
+- ~~FAQs~~
+- Post Page
+- User Posts
+- Tags
+- Tag Posts
+- Backend for posting
 
 ###
 

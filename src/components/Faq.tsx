@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 function Faq() {
   useEffect(() => {
-    document.title = "4DEVS - About Me";
+    document.title = "4DEVS - FAQ";
   });
   return (
     <>

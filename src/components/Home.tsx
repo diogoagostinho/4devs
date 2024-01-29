@@ -1,7 +1,11 @@
 import Post from "./Post";
 import "../styles/home.scss";
+import { useEffect } from "react";
 
 function Home() {
+  useEffect(() => {
+    document.title = "4DEVS";
+  });
   return (
     <>
       <div className="home">

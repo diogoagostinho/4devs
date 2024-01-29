@@ -22,10 +22,38 @@
   background: v.$lighterPurple;
   p {
     color: v.$purple;
-    text-decoration: underline;
   }
 }
 
 .navbar__bottom {
   padding: v.$mdp;
+  margin-top: 1.4rem;
+}
+
+.navbar__socials {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 0.4rem;
+}
+.navbar__socials-icon {
+  overflow: hidden;
+  padding: 0.5rem;
+  background-color: transparent;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  img {
+    width: 26px;
+    height: 26px;
+  }
+}
+.navbar__socials-icon:hover {
+  background-color: v.$lighterPurple;
+  p {
+    color: v.$purple;
+  }
 }
