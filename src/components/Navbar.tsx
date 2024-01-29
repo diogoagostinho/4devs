@@ -1,4 +1,5 @@
 import "../styles/navbar.scss";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -14,7 +15,9 @@ function Navbar() {
             </div>
           </div>
           <div className="navbar__right">
-            <button className="unfilled">Create Post</button>
+            <Link to="submit-posts">
+              <button className="unfilled">Create Post</button>
+            </Link>
           </div>
         </div>
       </div>

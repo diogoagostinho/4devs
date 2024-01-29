@@ -95,6 +95,19 @@ a:hover {
   color: $purple;
 }
 
+input,
+textarea {
+  outline-color: transparent;
+  transition: all 0.1s ease-in;
+  border-radius: $smp;
+  border: 1.5px solid $lighterText;
+  background: transparent;
+}
+input:focus,
+textarea:focus {
+  outline-color: $purple;
+}
+
 .side-text {
   font-size: $fss;
   color: $darkerText;

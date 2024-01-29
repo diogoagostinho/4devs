@@ -1,0 +1,59 @@
+@use "v";
+
+.post-form {
+  height: fit-content;
+  border-radius: 10px;
+  background: v.$white;
+  box-shadow: 0 0 2px 0 #00000050;
+  margin: 10px;
+}
+
+.post-form__content {
+  padding: 2rem;
+}
+.form-section {
+  margin: 1rem 0;
+}
+.checktags {
+  display: flex;
+  gap: 1rem;
+}
+
+form {
+  .form-centered {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  .form-submit {
+    background: v.$lighterPurple;
+    border: 1.5px solid v.$lighterText;
+    cursor: pointer;
+    transition: all 0.05s ease-in;
+  }
+  .form-submit:hover {
+    background: v.$purple;
+    border: 1.5px solid transparent;
+    color: v.$white;
+  }
+  textarea {
+    font-size: 1.4ch;
+    font-weight: 500;
+    height: 100%;
+    width: 90%;
+    padding: 8px 10px;
+  }
+  hr {
+    margin: 1rem 0;
+  }
+  p {
+    margin: 0.5rem 0;
+  }
+  input {
+    font-size: 1.4ch;
+    font-weight: 500;
+    height: 100%;
+    width: 50%;
+    padding: 8px 10px;
+  }
+}

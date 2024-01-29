@@ -53,13 +53,5 @@
     height: 100%;
     width: 70%;
     padding: 8px 10px;
-    border-radius: v.$smp;
-    border: 1.5px solid v.$lighterText;
-    background: transparent;
-    outline-color: transparent;
-    transition: all 0.1s ease-in;
-  }
-  input:focus {
-    outline-color: v.$purple;
   }
 }

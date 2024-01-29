@@ -10,6 +10,7 @@ import UserPage from "./UserPage";
 import BadUrl from "./BadUrl";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
+import PostForm from "./PostForm";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
                 <Route path="post/*" element={<PostPage />} />
                 <Route path="tag/*" element={<TagPage />} />
                 <Route path="user/*" element={<UserPage />} />
+                <Route path="submit-posts" element={<PostForm />} />
                 <Route path="*" element={<BadUrl />} />
               </Routes>
             </div>

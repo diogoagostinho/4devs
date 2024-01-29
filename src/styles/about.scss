@@ -22,3 +22,28 @@
     margin: 3rem 2rem 0 2rem;
   }
 }
+
+.tag__section {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  justify-content: left;
+}
+
+.tag-option {
+  background: v.$lighterPurple;
+  border-radius: 10px;
+  p {
+    font-size: 1.6ch;
+    color: v.$purple;
+  }
+  cursor: pointer;
+}
+
+.tag-option:hover {
+  background: v.$purple;
+  p {
+    color: v.$white;
+  }
+}
