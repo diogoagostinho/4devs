@@ -48,7 +48,6 @@
 <h3 align="left">To Do:</h3>
 
 - Make zoom out responsive
-- Change logo
 - Lazy loader for the posts
 - Transitions
 - Connect DB
