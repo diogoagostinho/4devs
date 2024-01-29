@@ -1,5 +1,6 @@
 import express from "express";
 import mysql from "mysql";
+import cors from "cors";
 
 const app = express();
 const database = mysql.createConnection({
@@ -14,6 +15,7 @@ app.listen(6969, () => {
 });
 
 app.use(express.json());
+app.use(cors());
 
 //Get USERS
 app.get("/users", (req, res) => {
