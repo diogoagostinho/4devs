@@ -28,13 +28,13 @@ CREATE TABLE `post` (
   `Description` varchar(255) NOT NULL,
   `Content` text NOT NULL,
   `PostImage` varchar(255) DEFAULT NULL,
-  `Date` date NOT NULL,
+  `Date` varchar(20) NOT NULL,
   `PostUser` int NOT NULL,
   PRIMARY KEY (`idPost`),
   UNIQUE KEY `idPost_UNIQUE` (`idPost`),
   KEY `PostUser_idx` (`PostUser`),
   CONSTRAINT `PostUser` FOREIGN KEY (`PostUser`) REFERENCES `user` (`idUser`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `post` (
 
 LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
-INSERT INTO `post` VALUES (1,'Top 10 Front-End Tools of 2024','Who doesn\'t love a good front-end tool? In this roundup, you\'ll find useful front-end tools that were popular last year and will help you speed up your development workflow. Let\'s dive in!','Hello Devs, It\'s a popular saying that a craftsman is as good as his tools and the same goes for Web Developers, both frontend and backend developers.','post1.gif','2024-01-29',1),(2,'This is a Post title','This is a Post description','This is the content from a Post.',NULL,'2024-01-29',1),(3,'This is a Post title','This is a Post description','This is the content from a Post.',NULL,'2024-01-29',1),(4,'This is a Post title','This is a Post description','This is the content from a Post.',NULL,'2024-01-29',1),(5,'This is a Post title','This is a Post description','This is the content from a Post.',NULL,'2024-01-29',1);
+INSERT INTO `post` VALUES (1,'Top 10 Front-End Tools of 2024','Who doesn\'t love a good front-end tool? In this roundup, you\'ll find useful front-end tools that were popular last year and will help you speed up your development workflow. Let\'s dive in!','Hello Devs, It\'s a popular saying that a craftsman is as good as his tools and the same goes for Web Developers, both frontend and backend developers.','post1.gif','Jan 30, 2024',1),(2,'This is a Post title','This is a Post description','This is the content from a Post.',NULL,'Jan 30, 2024',1),(10,'Title Post','Description Post','post post',NULL,'20243001',1),(11,'posoo','psott','adwad','C:\\fakepath\\post1.gif','20243001',1),(12,'sdad','w123','awdawdwd','C:\\fakepath\\post1.gif','20243001',1),(13,'111','222','a',NULL,'20243001',1),(14,'1111','222','aaawd','post1.gif','20243001',1),(15,'title 111','desc 222','adadadad','post1.gif','20243001',1);
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -138,4 +138,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-29 16:57:00
+-- Dump completed on 2024-01-30 16:37:58
