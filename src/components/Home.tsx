@@ -43,13 +43,16 @@ function Home() {
           </div>
         </div>
         <div className="home__content">
-          {posts.map((post) => (
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
+          {posts.map((post: any) => (
             <Post
               key={post.idPost}
               postId={post.idPost}
               postTitle={post.Title}
               postDescription={post.Description}
               postImage={post.PostImage}
+              postUser={post.PostUser}
+              postData={post.Date}
             />
           ))}
         </div>

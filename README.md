@@ -30,9 +30,11 @@
 
 <h3 align="left">Libraries used</h3>
 
-- **[Sass](https://www.npmjs.com/package/sass)** - For CSS
-- **[React Router Dom](https://www.npmjs.com/package/react-router-dom)** - For routing
-- **[Express](https://www.npmjs.com/package/express)** - For backend
+- **[Sass](https://www.npmjs.com/package/sass)**
+- **[React Router Dom](https://www.npmjs.com/package/react-router-dom)**
+- **[Express](https://www.npmjs.com/package/express)**
+- **[axios](https://www.npmjs.com/package/axios)**
+- **[cors](https://www.npmjs.com/package/cors)**
 
 ###
 
@@ -50,22 +52,34 @@
 
 <h3 align="left">To Do:</h3>
 
-- Make zoom out responsive
-- Lazy loader for the posts
-- Transitions
-- Connect DB
-- Search function
+Main:
 
-- Navbar
-- ~~Sidebar~~
-- Homepage
-- ~~About~~
-- ~~FAQs~~
-- Post Page
-- User Posts
-- Tags
-- Tag Posts
-- Backend for posting
+- Make website responsive
+- Lazy loader
+- Transitions and animations
+- Search
+
+Homepage:
+
+- Order by in home page
+- Send to post
+- User name on post
+- Tags on post
+
+Create post:
+
+- Password before posting
+- Tags on create post
+- Upload picture to real path
+- Save date to post (ex: Jan 01, 2000)
+
+Tags:
+
+- Show posts associated with that tag
+
+Users:
+
+- Show posts associated with that user
 
 ###
 

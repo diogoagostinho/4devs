@@ -55,11 +55,12 @@ app.get("/posts", (req, res) => {
 
 app.post("/posts", (req, res) => {
   const postQuery =
-    "INSERT INTO post (`Title`,`Description`,`Content`,`Date`,`PostUser`) VALUES (?)";
+    "INSERT INTO post (`Title`,`Description`,`Content`, `PostImage` ,`Date`,`PostUser`) VALUES (?)";
   const values = [
     req.body.title,
     req.body.description,
     req.body.content,
+    req.body.postimage,
     req.body.date,
     req.body.postuser,
   ];

@@ -6,6 +6,8 @@ function Post(props: {
   postDescription: string;
   postImage: string;
   postId: string;
+  postUser: number;
+  postData: Date;
 }) {
   return (
     <>
@@ -22,10 +24,10 @@ function Post(props: {
               </div>
               <div className="post__author-info">
                 <p className="user-text">
-                  <a href="#">Diogo Agostinho</a>
+                  <a href="#">{props.postUser}</a>
                 </p>
 
-                <p className="date-text">Jan 22, 2024</p>
+                <p className="date-text">{props.postData.toString()}</p>
               </div>
             </div>
 

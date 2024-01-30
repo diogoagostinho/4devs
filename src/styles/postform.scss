@@ -16,7 +16,27 @@
 }
 .checktags {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tag-box {
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  border: 1.5px solid v.$lighterText;
+  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
+  background: v.$lighterPurple;
+  cursor: pointer;
+}
+.tag-box:hover {
+  border: 1.5px solid v.$purple;
+  background-color: v.$purple;
+  color: v.$white;
+}
+.tag-box-checked {
+  border: 1.5px solid v.$purple;
+  background-color: v.$purple;
+  color: v.$white;
 }
 
 form {
@@ -49,7 +69,7 @@ form {
   p {
     margin: 0.5rem 0;
   }
-  input {
+  input:not(.tag-check) {
     font-size: 1.4ch;
     font-weight: 500;
     height: 100%;
