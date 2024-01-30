@@ -62,7 +62,6 @@ Main:
 Homepage:
 
 - Order by in home page
-- Send to post
 - User name on post
 - Tags on post
 

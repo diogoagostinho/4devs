@@ -1,12 +1,36 @@
+import { useEffect, useState } from "react";
 import "../styles/postpage.scss";
+import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 function PostPage() {
+  const location = useLocation();
+  const postId = location.pathname.split("/")[2].toString();
+
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    const fetchAllPosts = async () => {
+      try {
+        const res = await axios.get(`http://localhost:6969/post/${postId}`);
+        setPosts(res.data[0]);
+        console.log(res.data[0]);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchAllPosts();
+  }, []);
+
+  useEffect(() => {
+    document.title = posts.Title;
+  });
+
   return (
     <>
       <div className="postpage">
         <div className="postpage__content">
           <div className="postpage__content-top">
-            <img src="/postimages/post1.gif" alt="" />
+            {posts.PostImage && <img src={"/postimages/" + posts.PostImage} />}
           </div>
           <div className="postpage__content-bottom">
             <div className="post__author">
@@ -15,10 +39,10 @@ function PostPage() {
               </div>
               <div className="post__author-info">
                 <p className="user-text">
-                  <a href="#">Diogo Agostinho</a>
+                  <a href="#">{posts.PostUser}</a>
                 </p>
 
-                <p className="date-text">Jan 22, 2024</p>
+                <p className="date-text">{posts.Date}</p>
               </div>
             </div>
 
@@ -34,32 +58,12 @@ function PostPage() {
             <div className="post__title-desc onposttitle">
               <div className="postpage__header">
                 {" "}
-                <h1>Top 10 Front-End Tools of 2024</h1>
-                <p>
-                  Who doesn't love a good front-end tool? In this roundup,
-                  you'll find useful front-end tools that were popular last year
-                  and will help you speed up your development workflow. Let's
-                  dive in! "
-                </p>
+                <h1>{posts.Title}</h1>
+                <p>{posts.Description}</p>
               </div>
               <hr />
               <div className="postpage__body">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Recusandae optio nihil mollitia, commodi minus, fuga
-                  blanditiis aperiam quas iusto cupiditate, cum vel explicabo
-                  obcaecati? Blanditiis quisquam vero iure doloremque non! Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-                  optio nihil mollitia, commodi minus, fuga blanditiis aperiam
-                  quas iusto cupiditate, cum vel explicabo obcaecati? Blanditiis
-                  quisquam vero iure doloremque non!
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-                  commodi est illo itaque rerum? Quas nihil voluptas, sint sit
-                  at itaque, numquam modi similique vel optio ipsam tempore
-                  dolorem alias?
-                </p>
+                <p>{posts.Content}</p>
               </div>
             </div>
           </div>

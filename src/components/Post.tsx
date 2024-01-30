@@ -33,7 +33,7 @@ function Post(props: {
 
             <div className="post__title-desc">
               <h1>
-                <Link to={"/post/" + props.postId}>{props.postTitle}</Link>
+                <Link to={`/post/${props.postId}`}>{props.postTitle}</Link>
               </h1>
               <p>{props.postDescription}</p>
             </div>

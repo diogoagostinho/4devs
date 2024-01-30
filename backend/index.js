@@ -72,3 +72,16 @@ app.post("/posts", (req, res) => {
     }
   });
 });
+
+app.get("/post/:id", (req, res) => {
+  const postId = req.params.id;
+  const q = "SELECT * FROM post WHERE idPost = ?";
+
+  database.query(q, [postId], (err, data) => {
+    if (err) {
+      return res.json(err);
+    } else {
+      return res.json(data);
+    }
+  });
+});
