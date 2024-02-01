@@ -60,11 +60,6 @@ Main:
 - Transitions and animations
 - Search
 
-Homepage:
-
-- Order by in home page
-- Tags on post
-
 Create post:
 
 - Password before posting

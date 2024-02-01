@@ -9,6 +9,7 @@ function PostPage() {
   const postId = location.pathname.split("/")[2].toString();
 
   const [post, setPosts] = useState([]);
+  const [tags, setTags] = useState([]);
 
   useEffect(() => {
     const fetchAllPosts = async () => {
@@ -19,8 +20,21 @@ function PostPage() {
         console.log(err);
       }
     };
+
+    const fetchPostTags = async () => {
+      try {
+        const res = await axios.get(`http://localhost:6969/posttag/${postId}`);
+        setTags(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
     fetchAllPosts();
+    fetchPostTags();
   }, [postId]);
+
+  console.log(post);
+  console.log(tags);
 
   useEffect(() => {
     document.title = post.postTitle;
@@ -49,10 +63,13 @@ function PostPage() {
             </div>
 
             <div className="post__tags onposttag">
-              <p className="tag-text">
-                {" "}
-                <Link to="/tag/1">#webdev</Link>
-              </p>
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
+              {tags.map((tag: any) => (
+                <p className="tag-text">
+                  {" "}
+                  <Link to={"/tag/" + tag.tagId}>#{tag.tagName}</Link>
+                </p>
+              ))}
             </div>
 
             <div className="post__title-desc onposttitle">

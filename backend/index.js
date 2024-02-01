@@ -42,10 +42,36 @@ app.get("/tags", (req, res) => {
   });
 });
 
-//Get POSTS
+//Get POSTS ASC
 app.get("/posts", (req, res) => {
   const postQuery =
-    "SELECT * FROM posts INNER JOIN users ON posts.postUser = users.userId";
+    "SELECT * FROM posts INNER JOIN users ON posts.postUser = users.userId ORDER BY postId ASC";
+  database.query(postQuery, (err, data) => {
+    if (err) {
+      return res.json(err);
+    } else {
+      return res.json(data);
+    }
+  });
+});
+
+//Get POSTS DESC
+app.get("/posts/oldest", (req, res) => {
+  const postQuery =
+    "SELECT * FROM posts INNER JOIN users ON posts.postUser = users.userId ORDER BY postId DESC";
+  database.query(postQuery, (err, data) => {
+    if (err) {
+      return res.json(err);
+    } else {
+      return res.json(data);
+    }
+  });
+});
+
+//Get POSTS A-Z
+app.get("/posts/az", (req, res) => {
+  const postQuery =
+    "SELECT * FROM posts INNER JOIN users ON posts.postUser = users.userId ORDER BY postTitle ASC";
   database.query(postQuery, (err, data) => {
     if (err) {
       return res.json(err);
@@ -90,6 +116,21 @@ app.get("/post/:id", (req, res) => {
   });
 });
 
+//Get TAGS from POST:id
+app.get("/posttag/:id", (req, res) => {
+  const postId = req.params.id;
+  const q =
+    "SELECT * FROM tags INNER JOIN posts_tags ON tags.tagId = posts_tags.tag WHERE posts_tags.post = ?";
+
+  database.query(q, [postId], (err, data) => {
+    if (err) {
+      return res.json(err);
+    } else {
+      return res.json(data);
+    }
+  });
+});
+
 //Get POSTS of TAG:id
 app.get("/tag/:id", (req, res) => {
   const tagId = req.params.id;
@@ -104,5 +145,3 @@ app.get("/tag/:id", (req, res) => {
     }
   });
 });
-
-//Get Tags and UserName from POST:id

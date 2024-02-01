@@ -9,12 +9,16 @@ function Home() {
   });
 
   const [posts, setPosts] = useState([]);
+  const [latestActive, setLatestActive] = useState(false);
+  const [oldestActive, setOldestActive] = useState(false);
+  const [azActive, setAzActive] = useState(false);
 
   useEffect(() => {
     const fetchAllPosts = async () => {
       try {
         const res = await axios.get("http://localhost:6969/posts");
         setPosts(res.data);
+        setLatestActive(true);
       } catch (err) {
         console.log(err);
       }
@@ -22,23 +26,80 @@ function Home() {
     fetchAllPosts();
   }, []);
 
+  const handleLatest = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    try {
+      const res = await axios.get("http://localhost:6969/posts");
+      setPosts(res.data);
+      setLatestActive(true);
+      setOldestActive(false);
+      setAzActive(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleOldest = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    try {
+      const res = await axios.get("http://localhost:6969/posts/oldest");
+      setPosts(res.data);
+      setLatestActive(false);
+      setOldestActive(true);
+      setAzActive(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleAZ = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    try {
+      const res = await axios.get("http://localhost:6969/posts/az");
+      setPosts(res.data);
+      setLatestActive(false);
+      setOldestActive(false);
+      setAzActive(true);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <div className="home">
         <div className="home__orderby">
           <div className="home__orderby-item" id="orderByLatest">
-            <h3 className="active">
-              <a href="#">Latest</a>
+            <h3>
+              <a
+                className={latestActive ? "active" : ""}
+                onClick={handleLatest}
+                href=""
+              >
+                Latest
+              </a>
             </h3>
           </div>
           <div className="home__orderby-item" id="orderByOldest">
             <h3>
-              <a href="#">Oldest</a>
+              <a
+                className={oldestActive ? "active" : ""}
+                onClick={handleOldest}
+                href=""
+              >
+                Oldest
+              </a>
             </h3>
           </div>
           <div className="home__orderby-item" id="orderByAZ">
             <h3>
-              <a href="#">Alphabetically (A-Z)</a>
+              <a
+                className={azActive ? "active" : ""}
+                onClick={handleAZ}
+                href=""
+              >
+                Alphabetically (A-Z)
+              </a>
             </h3>
           </div>
         </div>

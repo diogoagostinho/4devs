@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "../styles/post.scss";
 import moment from "moment";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Post(props: {
   postTitle: string;
@@ -13,6 +15,22 @@ function Post(props: {
   postUserImage: string;
 }) {
   const dateStr = moment(props.postDate).format("MMM D, YYYY");
+
+  const [tags, setTags] = useState([]);
+
+  useEffect(() => {
+    const fetchPostTags = async () => {
+      try {
+        const res = await axios.get(
+          `http://localhost:6969/posttag/${props.postId}`
+        );
+        setTags(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchPostTags();
+  }, [props.postId]);
 
   return (
     <>
@@ -44,12 +62,13 @@ function Post(props: {
             </div>
 
             <div className="post__tags">
-              <p className="tag-text">
-                <a href="#">#webdev</a>
-              </p>
-              <p className="tag-text">
-                <a href="#">#tools</a>
-              </p>
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
+              {tags.map((tag: any) => (
+                <p className="tag-text">
+                  {" "}
+                  <Link to={"/tag/" + tag.tagId}>#{tag.tagName}</Link>
+                </p>
+              ))}
             </div>
           </div>
         </div>
