@@ -35,6 +35,7 @@
 - **[Express](https://www.npmjs.com/package/express)**
 - **[axios](https://www.npmjs.com/package/axios)**
 - **[cors](https://www.npmjs.com/package/cors)**
+- **[moment](https://www.npmjs.com/package/moment)**
 
 ###
 
@@ -62,7 +63,6 @@ Main:
 Homepage:
 
 - Order by in home page
-- User name on post
 - Tags on post
 
 Create post:
@@ -70,11 +70,6 @@ Create post:
 - Password before posting
 - Tags on create post
 - Upload picture to real path
-- Save date to post (ex: Jan 01, 2000)
-
-Tags:
-
-- Show posts associated with that tag
 
 Users:
 

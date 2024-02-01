@@ -29,8 +29,8 @@ function Tags() {
           <div className="tag__section">
             {/* eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
             {tags.map((tags: any) => (
-              <Link to={"/tags/" + tags.tagName}>
-                <div key={tags.idTag} className="tag-option">
+              <Link key={tags.tagId} to={"/tag/" + tags.tagId}>
+                <div className="tag-option">
                   <p>#{tags.tagName}</p>
                 </div>
               </Link>

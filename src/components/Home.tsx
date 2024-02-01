@@ -46,13 +46,15 @@ function Home() {
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
           {posts.map((post: any) => (
             <Post
-              key={post.idPost}
-              postId={post.idPost}
-              postTitle={post.Title}
-              postDescription={post.Description}
-              postImage={post.PostImage}
-              postUser={post.PostUser}
-              postData={post.Date}
+              key={post.postId}
+              postId={post.postId}
+              postTitle={post.postTitle}
+              postDescription={post.postDescription}
+              postImage={post.postImage}
+              postUser={post.userName}
+              postDate={post.postDate}
+              postUserId={post.postUser}
+              postUserImage={post.userImage}
             />
           ))}
         </div>

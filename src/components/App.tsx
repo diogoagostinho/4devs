@@ -32,8 +32,8 @@ function App() {
                 <Route path="faq" element={<Faq />} />
                 <Route path="about" element={<About />} />
                 <Route path="/post/:id" element={<PostPage />} />
-                <Route path="tag/*" element={<TagPage />} />
-                <Route path="user/*" element={<UserPage />} />
+                <Route path="/tag/:id" element={<TagPage />} />
+                <Route path="/user/:id" element={<UserPage />} />
                 <Route path="submit-posts" element={<PostForm />} />
                 <Route path="*" element={<BadUrl />} />
               </Routes>

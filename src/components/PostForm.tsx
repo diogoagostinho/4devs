@@ -7,12 +7,11 @@ function PostForm() {
   const navigate = useNavigate();
   const [tag, setTag] = useState([]);
   const [post, setPost] = useState({
-    title: "",
-    description: "",
-    content: "",
-    postimage: null,
-    date: "20243001",
-    postuser: 1,
+    postTitle: "",
+    postDescription: "",
+    postContent: "",
+    postImage: null,
+    postUser: 1,
   });
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
@@ -92,7 +91,7 @@ function PostForm() {
               <div id="CheckTags" className="checktags">
                 {/* eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
                 {tag.map((tag: any) => (
-                  <div key={tag.idTag} className="tag-box">
+                  <div key={tag.tagId} className="tag-box">
                     <input
                       className={"tag-check"}
                       type="checkbox"

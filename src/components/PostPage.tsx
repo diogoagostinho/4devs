@@ -1,69 +1,69 @@
 import { useEffect, useState } from "react";
 import "../styles/postpage.scss";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import moment from "moment";
 
 function PostPage() {
   const location = useLocation();
   const postId = location.pathname.split("/")[2].toString();
 
-  const [posts, setPosts] = useState([]);
+  const [post, setPosts] = useState([]);
+
   useEffect(() => {
     const fetchAllPosts = async () => {
       try {
         const res = await axios.get(`http://localhost:6969/post/${postId}`);
         setPosts(res.data[0]);
-        console.log(res.data[0]);
       } catch (err) {
         console.log(err);
       }
     };
     fetchAllPosts();
-  }, []);
+  }, [postId]);
 
   useEffect(() => {
-    document.title = posts.Title;
+    document.title = post.postTitle;
   });
+
+  const dateStr = moment(post.postDate).format("MMM D, YYYY");
 
   return (
     <>
       <div className="postpage">
         <div className="postpage__content">
           <div className="postpage__content-top">
-            {posts.PostImage && <img src={"/postimages/" + posts.PostImage} />}
+            {post.postImage && <img src={"/postimages/" + post.postImage} />}
           </div>
           <div className="postpage__content-bottom">
             <div className="post__author">
               <div className="post__author-image">
-                <img src="/userimages/diogoagostinho.jpg" alt="" />
+                <img src={"/userimages/" + post.userImage} alt="" />
               </div>
               <div className="post__author-info">
                 <p className="user-text">
-                  <a href="#">{posts.PostUser}</a>
+                  <Link to={"/user/" + post.userId}>{post.userName}</Link>
                 </p>
-
-                <p className="date-text">{posts.Date}</p>
+                <p className="date-text">{dateStr}</p>
               </div>
             </div>
 
             <div className="post__tags onposttag">
               <p className="tag-text">
-                <a href="#">#webdev</a>
-              </p>
-              <p className="tag-text">
-                <a href="#">#tools</a>
+                {" "}
+                <Link to="/tag/1">#webdev</Link>
               </p>
             </div>
 
             <div className="post__title-desc onposttitle">
               <div className="postpage__header">
                 {" "}
-                <h1>{posts.Title}</h1>
-                <p>{posts.Description}</p>
+                <h1>{post.postTitle}</h1>
+                <p>{post.postDescription}</p>
               </div>
               <hr />
               <div className="postpage__body">
-                <p>{posts.Content}</p>
+                <p>{post.postContent}</p>
               </div>
             </div>
           </div>
