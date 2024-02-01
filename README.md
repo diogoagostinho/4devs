@@ -66,10 +66,6 @@ Create post:
 - Tags on create post
 - Upload picture to real path
 
-Users:
-
-- Show posts associated with that user
-
 ###
 
 ---

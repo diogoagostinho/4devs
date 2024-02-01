@@ -18,7 +18,11 @@ function TagPage() {
       }
     };
     fetchAllPosts();
-  }, []);
+  }, [tagId]);
+
+  useEffect(() => {
+    document.title = "4DEVS";
+  });
 
   return (
     <>

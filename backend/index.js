@@ -145,3 +145,18 @@ app.get("/tag/:id", (req, res) => {
     }
   });
 });
+
+//Get POSTS from USER:id
+app.get("/user/:id", (req, res) => {
+  const userId = req.params.id;
+  const q =
+    "SELECT * FROM posts, users WHERE users.userId = ? AND posts.postUser = users.userId";
+
+  database.query(q, [userId], (err, data) => {
+    if (err) {
+      return res.json(err);
+    } else {
+      return res.json(data);
+    }
+  });
+});
