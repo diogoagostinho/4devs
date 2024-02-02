@@ -160,15 +160,3 @@ app.get("/user/:id", (req, res) => {
     }
   });
 });
-
-//TEST
-app.get("/teste", (req, res) => {
-  const q = "SELECT * FROM posts";
-  database.query(q, (err, data) => {
-    if (err) {
-      return res.json(err);
-    } else {
-      return res.json(data);
-    }
-  });
-});

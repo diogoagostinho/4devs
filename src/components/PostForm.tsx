@@ -27,10 +27,6 @@ function PostForm() {
 
     const target = e.target;
     setFile(target.files[0]);
-
-    console.log(e.target.files[0]);
-    console.log(target);
-    console.log(file);
   };
 
   const handleClick = async (e: { preventDefault: () => void }) => {
@@ -38,7 +34,7 @@ function PostForm() {
 
     const formData = new FormData();
 
-    if (typeof file === "undefined") return;
+    if (typeof file === "undefined") return null;
 
     formData.append("file", file);
     formData.append("upload_preset", "ml_default");
@@ -60,13 +56,6 @@ function PostForm() {
     } catch (err) {
       console.log(err);
     }
-  };
-
-  const handleTestClick = () => {
-    console.log("Tags: \n", tag);
-    console.log("Post: \n", post);
-    console.log("Password: \n", post.postUser);
-    console.log("File: ", file);
   };
 
   useEffect(() => {
@@ -151,12 +140,11 @@ function PostForm() {
             <div className="form-section">
               <p>🔑 Secret password for posting:</p>
               <input
+                required
                 maxLength={50}
                 type="password"
                 placeholder="Secret Password"
                 name="userPassword"
-                required
-                id="userPassword"
               />
             </div>
             <div className="form-section form-centered">
@@ -165,12 +153,6 @@ function PostForm() {
                 onClick={handleClick}
                 className="form-submit"
                 value={"Submit"}
-              />
-              <input
-                type="submit"
-                onClick={handleTestClick}
-                className="form-submit"
-                value={"Test"}
               />
             </div>
           </form>
