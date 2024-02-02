@@ -22,6 +22,8 @@
   <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/mysql.png" height="40" alt="mysql logo"  />
   <img width="12" />
   <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/express.png" height="40" alt="express logo"  />
+  <img width="12" />
+  <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/cloudinary.png" height="40" alt="cloudinary logo"  />
 </div>
 
 ###
@@ -65,7 +67,6 @@ Create post:
 
 - Password before posting
 - Tags on create post
-- Upload picture to real path
 
 ###
 

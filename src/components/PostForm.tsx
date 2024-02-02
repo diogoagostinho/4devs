@@ -22,11 +22,15 @@ function PostForm() {
   const handleImageChange = (e) => {
     setPost((prev) => ({
       ...prev,
-      [e.target.name]: e.target.files[0].name,
+      [e.target.name]: e.target.files[0],
     }));
 
     const target = e.target;
     setFile(target.files[0]);
+
+    console.log(e.target.files[0]);
+    console.log(target);
+    console.log(file);
   };
 
   const handleClick = async (e: { preventDefault: () => void }) => {
@@ -48,13 +52,14 @@ function PostForm() {
       }
     ).then((r) => r.json());
 
-    /*
+    post.postImage = results.url;
+
     try {
       await axios.post("http://localhost:6969/posts", post);
       navigate("/");
     } catch (err) {
       console.log(err);
-    }*/
+    }
   };
 
   const handleTestClick = () => {

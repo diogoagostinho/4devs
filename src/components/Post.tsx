@@ -37,7 +37,7 @@ function Post(props: {
       <div className="post">
         <div className="post__content">
           <div className="post__content-top">
-            {props.postImage && <img src={"/postimages/" + props.postImage} />}
+            {props.postImage && <img src={props.postImage} />}
           </div>
 
           <div className="post__content-bottom">

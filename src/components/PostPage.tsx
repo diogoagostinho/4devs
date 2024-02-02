@@ -47,7 +47,7 @@ function PostPage() {
       <div className="postpage">
         <div className="postpage__content">
           <div className="postpage__content-top">
-            {post.postImage && <img src={"/postimages/" + post.postImage} />}
+            {post.postImage && <img src={post.postImage} />}
           </div>
           <div className="postpage__content-bottom">
             <div className="post__author">
