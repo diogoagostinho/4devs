@@ -59,6 +59,7 @@ Main:
 - Lazy loader
 - Transitions and animations
 - Search
+- Add images to camel and john doe
 
 Create post:
 

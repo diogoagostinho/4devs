@@ -64,7 +64,7 @@ function Post(props: {
             <div className="post__tags">
               {/* eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
               {tags.map((tag: any) => (
-                <p className="tag-text">
+                <p key={tag.tagId} className="tag-text">
                   {" "}
                   <Link to={"/tag/" + tag.tagId}>#{tag.tagName}</Link>
                 </p>

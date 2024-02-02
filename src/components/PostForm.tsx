@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 function PostForm() {
   const navigate = useNavigate();
   const [tag, setTag] = useState([]);
+  const [file, setFile] = useState();
   const [post, setPost] = useState({
     postTitle: "",
     postDescription: "",
@@ -23,16 +24,33 @@ function PostForm() {
       ...prev,
       [e.target.name]: e.target.files[0].name,
     }));
+
+    const target = e.target;
+    setFile(target.files[0]);
   };
 
   const handleClick = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+
+    const formData = new FormData();
+
+    if (typeof file === "undefined") return;
+
+    formData.append("thumbnail-", file);
+
     try {
       await axios.post("http://localhost:6969/posts", post);
       navigate("/");
     } catch (err) {
       console.log(err);
     }
+  };
+
+  const handleTestClick = () => {
+    console.log("Tags: \n", tag);
+    console.log("Post: \n", post);
+    console.log("Password: \n", post.postUser);
+    console.log("File: ", file);
   };
 
   useEffect(() => {
@@ -59,9 +77,9 @@ function PostForm() {
               <p>Post title:</p>
               <input
                 type="text"
-                name="title"
+                name="postTitle"
                 maxLength={80}
-                placeholder="Type a title"
+                placeholder="Type a title (max. 80 characters)"
                 required
                 onChange={handleChange}
               />
@@ -70,9 +88,9 @@ function PostForm() {
               <p>Post description:</p>
               <input
                 type="text"
-                name="description"
-                maxLength={160}
-                placeholder="Write a quick description"
+                name="postDescription"
+                maxLength={200}
+                placeholder="Write a quick description (max. 200 characters)"
                 required
                 onChange={handleChange}
               />
@@ -82,7 +100,7 @@ function PostForm() {
               <input
                 type="file"
                 accept="image/gif, image/jpeg, image/png, image/jpg"
-                name="postimage"
+                name="postImage"
                 onChange={handleImageChange}
               />
             </div>
@@ -96,9 +114,10 @@ function PostForm() {
                       className={"tag-check"}
                       type="checkbox"
                       name={tag.tagName}
-                      id={tag.tagName}
+                      id={tag.tagId}
+                      //onChange={handleTags}
                     />
-                    <label htmlFor={tag.tagName}>#{tag.tagName}</label>
+                    <label htmlFor={tag.tagId}>#{tag.tagName}</label>
                   </div>
                 ))}
               </div>
@@ -109,9 +128,20 @@ function PostForm() {
                 required
                 rows={4}
                 placeholder="Write the post..."
-                name="content"
+                name="postContent"
                 onChange={handleChange}
               ></textarea>
+            </div>
+            <div className="form-section">
+              <p>🔑 Secret password for posting:</p>
+              <input
+                maxLength={50}
+                type="password"
+                placeholder="Secret Password"
+                name="userPassword"
+                required
+                id="userPassword"
+              />
             </div>
             <div className="form-section form-centered">
               <input
@@ -119,6 +149,12 @@ function PostForm() {
                 onClick={handleClick}
                 className="form-submit"
                 value={"Submit"}
+              />
+              <input
+                type="submit"
+                onClick={handleTestClick}
+                className="form-submit"
+                value={"Test"}
               />
             </div>
           </form>
