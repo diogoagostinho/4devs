@@ -36,14 +36,25 @@ function PostForm() {
 
     if (typeof file === "undefined") return;
 
-    formData.append("thumbnail-", file);
+    formData.append("file", file);
+    formData.append("upload_preset", "ml_default");
+    formData.append("api_key", import.meta.env.CLOUDINARY_API);
 
+    const results = await fetch(
+      "https://api.cloudinary.com/v1_1/duoh8s24o/image/upload",
+      {
+        method: "POST",
+        body: formData,
+      }
+    ).then((r) => r.json());
+
+    /*
     try {
       await axios.post("http://localhost:6969/posts", post);
       navigate("/");
     } catch (err) {
       console.log(err);
-    }
+    }*/
   };
 
   const handleTestClick = () => {
