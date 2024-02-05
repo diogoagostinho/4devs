@@ -61,7 +61,6 @@ Main:
 - Lazy loader
 - Transitions and animations
 - Toast UI
-- Verify post pages with 404 error
 
 Create post:
 
