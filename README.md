@@ -61,11 +61,11 @@ Main:
 - Lazy loader
 - Transitions and animations
 - Search
-- Add images to camel and john doe
+- Toast UI
+- Verify post pages with 404 error
 
 Create post:
 
-- Password before posting
 - Tags on create post
 
 ###

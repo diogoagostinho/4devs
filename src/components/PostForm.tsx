@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 function PostForm() {
   const navigate = useNavigate();
   const [tag, setTag] = useState([]);
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [pass, setPass] = useState();
   const [file, setFile] = useState();
   const [post, setPost] = useState({
     postTitle: "",
@@ -17,6 +19,10 @@ function PostForm() {
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
     setPost((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handlePassword = (e) => {
+    setPass(e.target.value);
   };
 
   const handleImageChange = (e) => {
@@ -32,29 +38,34 @@ function PostForm() {
   const handleClick = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    const formData = new FormData();
+    if (pass == "P@$$w0rd") {
+      if (post.postImage != null) {
+        const formData = new FormData();
 
-    if (typeof file === "undefined") return null;
+        if (typeof file === "undefined") return null;
 
-    formData.append("file", file);
-    formData.append("upload_preset", "ml_default");
-    formData.append("api_key", import.meta.env.CLOUDINARY_API);
+        formData.append("file", file);
+        formData.append("upload_preset", "ml_default");
+        formData.append("api_key", import.meta.env.CLOUDINARY_API);
 
-    const results = await fetch(
-      "https://api.cloudinary.com/v1_1/duoh8s24o/image/upload",
-      {
-        method: "POST",
-        body: formData,
+        const results = await fetch(
+          "https://api.cloudinary.com/v1_1/duoh8s24o/image/upload",
+          {
+            method: "POST",
+            body: formData,
+          }
+        ).then((r) => r.json());
+
+        post.postImage = results.url;
       }
-    ).then((r) => r.json());
-
-    post.postImage = results.url;
-
-    try {
-      await axios.post("http://localhost:6969/posts", post);
-      navigate("/");
-    } catch (err) {
-      console.log(err);
+      try {
+        await axios.post("http://localhost:6969/posts", post);
+        navigate("/");
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      console.log("Wrong Pass");
     }
   };
 
@@ -69,6 +80,14 @@ function PostForm() {
     };
     fetchAllTags();
   });
+
+  const handleTest = (e) => {
+    for (let i = 0; i < tag.length; i++) {}
+    console.log("Tag N.: ", e.target.id);
+    console.log("Tag State: ", e.target.value);
+    setSelectedTags(e.target.value);
+    console.log(selectedTags.toString());
+  };
 
   return (
     <div className="post-form">
@@ -120,7 +139,6 @@ function PostForm() {
                       type="checkbox"
                       name={tag.tagName}
                       id={tag.tagId}
-                      //onChange={handleTags}
                     />
                     <label htmlFor={tag.tagId}>#{tag.tagName}</label>
                   </div>
@@ -145,6 +163,7 @@ function PostForm() {
                 type="password"
                 placeholder="Secret Password"
                 name="userPassword"
+                onChange={handlePassword}
               />
             </div>
             <div className="form-section form-centered">
@@ -154,6 +173,7 @@ function PostForm() {
                 className="form-submit"
                 value={"Submit"}
               />
+              <input type="button" onClick={handleTest} value={"Test"} />
             </div>
           </form>
         </div>
