@@ -160,3 +160,21 @@ app.get("/user/:id", (req, res) => {
     }
   });
 });
+
+//SEARCH
+app.get("/search/:s", (req, res) => {
+  const search = req.params.s;
+
+  database.query(
+    "SELECT * FROM posts INNER JOIN users ON posts.postUser = users.userId WHERE posts.postTitle LIKE '%" +
+      [search] +
+      "%'",
+    (err, data) => {
+      if (err) {
+        return res.json(err);
+      } else {
+        return res.json(data);
+      }
+    }
+  );
+});

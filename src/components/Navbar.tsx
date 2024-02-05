@@ -1,7 +1,25 @@
+import { useState } from "react";
 import "../styles/navbar.scss";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();
+
+  const [search, setSearch] = useState();
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+
+    if (e.key === "Enter") {
+      navigate("/search/" + search);
+    }
+  };
+
   return (
     <>
       <div className="navbar">
@@ -11,7 +29,12 @@ function Navbar() {
               <img src="/4devs-letters-blue.png" />
             </div>
             <div className="navbar-search">
-              <input type="text" placeholder="🔍 Search..." />
+              <input
+                onKeyDown={handleSearch}
+                onChange={handleChange}
+                type="text"
+                placeholder="🔍 Search..."
+              />
             </div>
           </div>
           <div className="navbar__right">

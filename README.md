@@ -60,7 +60,6 @@ Main:
 - Make website responsive
 - Lazy loader
 - Transitions and animations
-- Search
 - Toast UI
 - Verify post pages with 404 error
 

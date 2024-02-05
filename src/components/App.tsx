@@ -11,6 +11,7 @@ import BadUrl from "./BadUrl";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import PostForm from "./PostForm";
+import Search from "./Search";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
                 <Route path="/tag/:id" element={<TagPage />} />
                 <Route path="/user/:id" element={<UserPage />} />
                 <Route path="submit-posts" element={<PostForm />} />
+                <Route path="/search/:s" element={<Search />} />
                 <Route path="*" element={<BadUrl />} />
               </Routes>
             </div>
