@@ -32,12 +32,12 @@
 
 <h3 align="left">Libraries used</h3>
 
-- **[Sass](https://www.npmjs.com/package/sass)**
-- **[React Router Dom](https://www.npmjs.com/package/react-router-dom)**
-- **[Express](https://www.npmjs.com/package/express)**
-- **[axios](https://www.npmjs.com/package/axios)**
-- **[cors](https://www.npmjs.com/package/cors)**
-- **[moment](https://www.npmjs.com/package/moment)**
+- **[Sass](https://www.npmjs.com/package/sass)** - For CSS
+- **[React Router Dom](https://www.npmjs.com/package/react-router-dom)** - For routing
+- **[Express](https://www.npmjs.com/package/express)** - For backend
+- **[axios](https://www.npmjs.com/package/axios)** - For MYSQL DB connection
+- **[moment](https://www.npmjs.com/package/moment)** - For date and time
+- **[React-Toastify](https://www.npmjs.com/package/react-toastify)** - For notifications
 
 ###
 
@@ -58,9 +58,7 @@
 Main:
 
 - Make website responsive
-- Lazy loader
 - Transitions and animations
-- Toast UI
 
 Create post:
 

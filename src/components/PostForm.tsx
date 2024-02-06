@@ -3,6 +3,7 @@ import "../styles/postform.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function PostForm() {
   const navigate = useNavigate();
@@ -61,6 +62,9 @@ function PostForm() {
       }
       try {
         await axios.post("http://localhost:6969/posts", post);
+        toast.success("Post submitted successfully!", {
+          position: "bottom-right",
+        });
         navigate("/");
       } catch (err) {
         console.log(err);
@@ -86,7 +90,6 @@ function PostForm() {
   });
 
   const handleTest = (e) => {
-    for (let i = 0; i < tag.length; i++) {}
     console.log("Tag N.: ", e.target.id);
     console.log("Tag State: ", e.target.value);
     setSelectedTags(e.target.value);
@@ -178,7 +181,6 @@ function PostForm() {
                   className="form-submit"
                   value={"Submit"}
                 />
-                <input type="button" onClick={handleTest} value={"Test"} />
               </div>
             </form>
           </div>

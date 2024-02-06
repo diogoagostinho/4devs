@@ -12,7 +12,6 @@ import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import PostForm from "./PostForm";
 import Search from "./Search";
-import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
