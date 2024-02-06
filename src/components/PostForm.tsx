@@ -7,16 +7,23 @@ import "react-toastify/dist/ReactToastify.css";
 
 function PostForm() {
   const navigate = useNavigate();
+
   const [tag, setTag] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
   const [pass, setPass] = useState();
   const [file, setFile] = useState();
+
   const [post, setPost] = useState({
+    postId: null,
     postTitle: "",
     postDescription: "",
     postContent: "",
     postImage: null,
     postUser: 1,
+  });
+  const [posttag] = useState({
+    postId: null,
+    tagId: [null],
   });
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
@@ -37,8 +44,28 @@ function PostForm() {
     setFile(target.files[0]);
   };
 
+  useEffect(() => {
+    const fetchLastPost = async () => {
+      try {
+        const res = await axios.get("http://localhost:6969/lastpost");
+        post.postId = res.data.postId;
+        posttag.postId = post.postId;
+        if (post.postId && posttag.postId) {
+          post.postId++;
+          posttag.postId++;
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchLastPost();
+  });
+
   const handleClick = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+
+    console.log(post.postId);
+    console.log(posttag.postId);
 
     if (pass == "P@$$w0rd") {
       if (post.postImage != null) {
@@ -89,11 +116,21 @@ function PostForm() {
     fetchAllTags();
   });
 
+  const handleTags = (e) => {
+    const checkID = e.target.id;
+    const checkNAME = e.target.name;
+    console.log(checkID + ": " + checkNAME + "\n\n");
+
+    if (e.target.checked === true) {
+      console.log("tag is checked");
+      setSelectedTags(checkID);
+    } else {
+      console.log("tag is unchecked");
+    }
+  };
+
   const handleTest = (e) => {
-    console.log("Tag N.: ", e.target.id);
-    console.log("Tag State: ", e.target.value);
-    setSelectedTags(e.target.value);
-    console.log(selectedTags.toString());
+    console.log("Selected Tags: ", selectedTags);
   };
 
   return (
@@ -141,12 +178,13 @@ function PostForm() {
                 <div id="CheckTags" className="checktags">
                   {/* eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
                   {tag.map((tag: any) => (
-                    <div key={tag.tagId} className="tag-box">
+                    <div key={"tag" + tag.tagId} className="tag-box">
                       <input
                         className={"tag-check"}
                         type="checkbox"
                         name={tag.tagName}
                         id={tag.tagId}
+                        onClick={handleTags}
                       />
                       <label htmlFor={tag.tagId}>#{tag.tagName}</label>
                     </div>
@@ -180,6 +218,12 @@ function PostForm() {
                   onClick={handleClick}
                   className="form-submit"
                   value={"Submit"}
+                />
+                <input
+                  type="submit"
+                  onClick={handleTest}
+                  className="form-submit"
+                  value={"Test"}
                 />
               </div>
             </form>

@@ -84,8 +84,9 @@ app.get("/posts/az", (req, res) => {
 //Create POSTS
 app.post("/posts", (req, res) => {
   const postQuery =
-    "INSERT INTO posts (`postTitle`,`postDescription`,`postContent`, `postImage` ,`postUser`) VALUES (?)";
+    "INSERT INTO posts (`postId`,`postTitle`,`postDescription`,`postContent`, `postImage` ,`postUser`) VALUES (?)";
   const values = [
+    req.body.postId,
     req.body.postTitle,
     req.body.postDescription,
     req.body.postContent,
@@ -97,6 +98,18 @@ app.post("/posts", (req, res) => {
       return res.json(err);
     } else {
       return res.json("Post Submitted Sucessfully!");
+    }
+  });
+});
+
+//Get LAST POST
+app.get("/lastpost", (req, res) => {
+  const q = "SELECT postId from posts ORDER BY postId DESC";
+  database.query(q, (err, data) => {
+    if (err) {
+      return res.json(err);
+    } else {
+      return res.json(data[0]);
     }
   });
 });
@@ -177,4 +190,17 @@ app.get("/search/:s", (req, res) => {
       }
     }
   );
+});
+
+//POST INTO POSTS_TAGS
+app.post("/poststags", (req, res) => {
+  const postQuery = "INSERT INTO posts_tags (`post`, `tag`) VALUES (?)";
+  const values = [req.body.postId, req.body.tagId];
+  database.query(postQuery, [values], (err) => {
+    if (err) {
+      return res.json(err);
+    } else {
+      return res.json("Post Submitted Sucessfully!");
+    }
+  });
 });
