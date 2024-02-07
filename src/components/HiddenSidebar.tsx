@@ -16,6 +16,7 @@ function HiddenSidebar() {
       <div onClick={handleActivation} className="hiddensidebar-activation">
         <p className={isActive ? "text-active" : ""}>+</p>
       </div>
+
       <div className={isActive ? "hiddensidebar hiddenshown" : "hiddensidebar"}>
         <div className="hiddensidebar__top">
           <div className="sidebar__item hidden-item">

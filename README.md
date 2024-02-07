@@ -13,17 +13,14 @@
 ###
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/react.png" height="40" alt="react logo"  />
-  <img width="12" />
-  <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/typescript.png" height="40" alt="typescript logo"  />
-  <img width="12" />
-  <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/vite.png" height="40" alt="vite logo"  />
-  <img width="12" />
-  <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/mysql.png" height="40" alt="mysql logo"  />
-  <img width="12" />
-  <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/express.png" height="40" alt="express logo"  />
-  <img width="12" />
-  <img src="https://raw.githubusercontent.com/diogoagostinho/4devs/main/assets/cloudinary.png" height="40" alt="cloudinary logo"  />
+  
+  ![ReactJS](https://img.shields.io/badge/React-4CB4FF?style=for-the-badge&logo=react&logoColor=white)
+  ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+  ![Vite](https://img.shields.io/badge/Vite-9D5BFE?style=for-the-badge&logo=vite&logoColor=white)
+  ![Mysql](https://img.shields.io/badge/MySQL-blue?style=for-the-badge&logo=mysql&logoColor=white)
+  ![Express](https://img.shields.io/badge/Express-3a3b3a?style=for-the-badge&logo=express&logoColor=white)
+  ![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)
+  
 </div>
 
 ###
@@ -38,6 +35,7 @@
 - **[axios](https://www.npmjs.com/package/axios)** - For MYSQL DB connection
 - **[moment](https://www.npmjs.com/package/moment)** - For date and time
 - **[React-Toastify](https://www.npmjs.com/package/react-toastify)** - For notifications
+- **[React Awesome Reveal](https://www.npmjs.com/package/react-awesome-reveal)** - For animations and transitions
 
 ###
 
@@ -50,19 +48,6 @@
 <h3 align="left">Visit website now</h3>
 
 - [N/A](#)
-
-###
-
-<h3 align="left">To Do:</h3>
-
-Main:
-
-- Make website responsive
-- Transitions and animations
-
-Create post:
-
-- Tags on create post
 
 ###
 
