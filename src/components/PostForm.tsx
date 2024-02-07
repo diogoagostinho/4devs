@@ -22,6 +22,7 @@ function PostForm() {
     postImage: null,
     postUser: 1,
   });
+
   const [posttag] = useState({
     postId: null,
     tagId: [null],
@@ -89,7 +90,10 @@ function PostForm() {
         post.postImage = results.url;
       }
       try {
-        await axios.post("http://localhost:6969/posts", post);
+        await axios.post("http://localhost:6969/posts", {
+          ...post,
+          tagsIds: selectedTags,
+        });
         toast.success("Post submitted successfully!", {
           position: "bottom-right",
         });
@@ -124,8 +128,9 @@ function PostForm() {
 
     if (e.target.checked === true) {
       console.log("tag is checked");
-      setSelectedTags(checkID);
+      setSelectedTags((state) => [...state, checkID]);
     } else {
+      setSelectedTags((state) => state.filter((x) => x != checkID));
       console.log("tag is unchecked");
     }
   };

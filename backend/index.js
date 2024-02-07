@@ -23,6 +23,7 @@ app.get("/users", (req, res) => {
   const userQuery = "SELECT * FROM users";
   database.query(userQuery, (err, data) => {
     if (err) {
+      console.log(err);
       return res.json(err);
     } else {
       return res.json(data);
@@ -93,13 +94,28 @@ app.post("/posts", (req, res) => {
     req.body.postImage,
     req.body.postUser,
   ];
+
   database.query(postQuery, [values], (err) => {
     if (err) {
       return res.json(err);
-    } else {
-      return res.json("Post Submitted Sucessfully!");
     }
   });
+
+  console.log(req.body.tagsIds);
+
+  const tagQuery =
+    "INSERT INTO posts_tags (`post`, `tag`) VALUES " +
+    req.body.tagsIds.map((x) => `(${req.body.postId}, ${x})`);
+
+  console.log(tagQuery);
+
+  database.query(tagQuery, (err) => {
+    if (err) {
+      // return res.json(err);
+      console.log(err);
+    }
+  });
+  return res.send();
 });
 
 //Get LAST POST

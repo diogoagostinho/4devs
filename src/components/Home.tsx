@@ -78,7 +78,7 @@ function Home() {
                   onClick={handleLatest}
                   href=""
                 >
-                  Latest
+                  Oldest
                 </a>
               </h3>
             </div>
@@ -89,7 +89,7 @@ function Home() {
                   onClick={handleOldest}
                   href=""
                 >
-                  Oldest
+                  Latest
                 </a>
               </h3>
             </div>
