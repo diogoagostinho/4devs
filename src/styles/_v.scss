@@ -126,7 +126,18 @@ textarea:focus {
   color: $darkerText;
 }
 
+.app__bottom-left-hidden {
+  display: none;
+}
+
 @media screen and (max-width: 500px) {
+  .app__top {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    left: 0;
+    right: 0;
+  }
   .home__orderby {
     justify-content: center;
     h3 {
@@ -143,6 +154,7 @@ textarea:focus {
     flex-direction: column;
     padding: 1rem;
     display: flex;
+    width: 100%;
   }
   .navbar__left {
     flex-direction: column;
@@ -156,19 +168,21 @@ textarea:focus {
     }
   }
   .navbar-search {
-    width: 100%;
-    height: 2rem;
+    width: fit-content;
+    height: fit-content;
     input {
-      width: 100%;
-      padding: 0 6px;
+      width: fit-content;
+      padding: 6px;
     }
   }
   .navbar {
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
     width: 100%;
+    padding: 0;
   }
   .app__bottom {
     padding-top: 0;
@@ -180,6 +194,9 @@ textarea:focus {
   }
   .app__bottom-left {
     display: none;
+  }
+  .app__bottom-left-hidden {
+    display: block;
   }
 }
 @media screen and (min-width: 1300px) {

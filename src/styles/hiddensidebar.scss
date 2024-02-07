@@ -1,0 +1,83 @@
+@use "v";
+
+.hiddensidebar {
+  background: v.$grey;
+  z-index: 99;
+  width: 100%;
+  margin-top: 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  display: none;
+}
+
+.hiddensidebar__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hiddensidebar__bottom {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.hidden-item {
+  width: fit-content;
+}
+
+.hidden-socials {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hiddensidebar-activation {
+  margin-top: 6rem;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
+  align-content: center;
+  transition: all 0.1s ease-in;
+
+  p {
+    font-size: 4.4ch;
+    font-weight: 400;
+    overflow: hidden;
+    transition: all 0.1s ease-in;
+  }
+  p:hover {
+    color: v.$purple;
+  }
+  .text-active {
+    transition: all 0.1s ease-in;
+    transform: rotate(45deg);
+  }
+}
+
+.hiddenshown {
+  display: block;
+}
+
+@media screen and (max-width: 500px) {
+  .hiddensidebar {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    p {
+      font-size: 1.2ch;
+    }
+  }
+}

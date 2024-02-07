@@ -12,6 +12,7 @@ import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import PostForm from "./PostForm";
 import Search from "./Search";
+import HiddenSidebar from "./HiddenSidebar";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         <div className="app">
           <div className="app__top">
             <Navbar />
+          </div>
+          <div className="app__bottom-left-hidden">
+            <HiddenSidebar />
           </div>
           <div className="app__bottom">
             <div className="app__bottom-left">
