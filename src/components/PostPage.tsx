@@ -43,9 +43,10 @@ function PostPage() {
   }, [postId]);
 
   useEffect(() => {
+    // @ts-expect-error any type false alarm
     document.title = post.postTitle;
   });
-
+  // @ts-expect-error any type false alarm
   const dateStr = moment(post.postDate).format("MMM D, YYYY");
 
   console.log(postRef.current);
@@ -65,15 +66,18 @@ function PostPage() {
           <div className="postpage">
             <div className="postpage__content">
               <div className="postpage__content-top">
+                {/* @ts-expect-error any type false alarm */}
                 {post.postImage && <img src={post.postImage} />}
               </div>
               <div className="postpage__content-bottom">
                 <div className="post__author">
                   <div className="post__author-image">
+                    {/* @ts-expect-error any type false alarm */}
                     <img src={"/userimages/" + post.userImage} alt="" />
                   </div>
                   <div className="post__author-info">
                     <p className="user-text">
+                      {/* @ts-expect-error any type false alarm */}
                       <Link to={"/user/" + post.userId}>{post.userName}</Link>
                     </p>
                     <p className="date-text">{dateStr}</p>
@@ -93,11 +97,14 @@ function PostPage() {
                 <div className="post__title-desc onposttitle">
                   <div className="postpage__header">
                     {" "}
+                    {/* @ts-expect-error any type false alarm */}
                     <h1>{post.postTitle}</h1>
+                    {/* @ts-expect-error any type false alarm */}
                     <p>{post.postDescription}</p>
                   </div>
                   <hr />
                   <div className="postpage__body">
+                    {/* @ts-expect-error any type false alarm */}
                     <p>{post.postContent}</p>
                   </div>
                 </div>

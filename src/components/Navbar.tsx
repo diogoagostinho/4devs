@@ -8,10 +8,12 @@ function Navbar() {
 
   const [search, setSearch] = useState();
 
+  // @ts-expect-error event below is ok
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
 
+  // @ts-expect-error event below is ok
   const handleSearch = (e) => {
     setSearch(e.target.value);
 

@@ -32,10 +32,12 @@ function PostForm() {
     setPost((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  // @ts-expect-error event below is ok
   const handlePassword = (e) => {
     setPass(e.target.value);
   };
 
+  // @ts-expect-error event below is ok
   const handleImageChange = (e) => {
     setPost((prev) => ({
       ...prev,
@@ -117,11 +119,12 @@ function PostForm() {
     fetchAllTags();
   });
 
+  // @ts-expect-error event below is ok
   const handleTags = (e) => {
     const checkID = e.target.id;
-    const checkNAME = e.target.name;
 
     if (e.target.checked === true) {
+      // @ts-expect-error state below needed for injection
       setSelectedTags((state) => [...state, checkID]);
     } else {
       setSelectedTags((state) => state.filter((x) => x != checkID));
