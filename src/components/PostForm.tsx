@@ -66,9 +66,6 @@ function PostForm() {
   const handleClick = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    console.log(post.postId);
-    console.log(posttag.postId);
-
     if (pass == "P@$$w0rd") {
       if (post.postImage != null) {
         const formData = new FormData();
@@ -105,7 +102,6 @@ function PostForm() {
       toast.error("Wrong Password!", {
         position: "bottom-right",
       });
-      console.log("Wrong Pass");
     }
   };
 
@@ -124,19 +120,12 @@ function PostForm() {
   const handleTags = (e) => {
     const checkID = e.target.id;
     const checkNAME = e.target.name;
-    console.log(checkID + ": " + checkNAME + "\n\n");
 
     if (e.target.checked === true) {
-      console.log("tag is checked");
       setSelectedTags((state) => [...state, checkID]);
     } else {
       setSelectedTags((state) => state.filter((x) => x != checkID));
-      console.log("tag is unchecked");
     }
-  };
-
-  const handleTest = (e) => {
-    console.log("Selected Tags: ", selectedTags);
   };
 
   return (
@@ -225,12 +214,6 @@ function PostForm() {
                     onClick={handleClick}
                     className="form-submit"
                     value={"Submit"}
-                  />
-                  <input
-                    type="submit"
-                    onClick={handleTest}
-                    className="form-submit"
-                    value={"Test"}
                   />
                 </div>
               </form>

@@ -101,13 +101,9 @@ app.post("/posts", (req, res) => {
     }
   });
 
-  console.log(req.body.tagsIds);
-
   const tagQuery =
     "INSERT INTO posts_tags (`post`, `tag`) VALUES " +
     req.body.tagsIds.map((x) => `(${req.body.postId}, ${x})`);
-
-  console.log(tagQuery);
 
   database.query(tagQuery, (err) => {
     if (err) {

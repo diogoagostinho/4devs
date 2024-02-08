@@ -33,7 +33,7 @@ CREATE TABLE `posts` (
   PRIMARY KEY (`postId`),
   KEY `postUser_FOREIGN_idx` (`postUser`),
   CONSTRAINT `postUser_FOREIGN` FOREIGN KEY (`postUser`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (1,'Top 10 Front-End Tools of 2024','Who doesn\'t love a good front-end tool? In this roundup, you\'ll find useful front-end tools that were popular last year and will help you speed up your development workflow.','Hello Devs, It\'s a popular saying that a craftsman is as good as his tools and the same goes for Web Developers, both frontend and backend developers. Who doesn\'t love a good front-end tool? In this roundup, you\'ll find useful front-end tools that were popular last year and will help you speed up your development workflow. Let\'s dive in! Hello Devs, It\'s a popular saying that a craftsman is as good as his tools and the same goes for Web Developers, both frontend and backend developers. Hello Devs, It\'s a popular saying that a craftsman is as good as his tools and the same goes for Web Developers, both frontend and backend developers. Hello Devs, It\'s a popular saying that a craftsman is as good as his tools and the same goes for Web Developers, both frontend and backend developers.','post1.gif','2024-01-31',1),(2,'What is the most difficult coding language?','Malbolge - the most difficult language in the world','A language with no standard syntax, in which all commands are executed arbitrarily and the code is even encrypted. Malbolge works on a ternary number system, understands only 3 registers, and fills up the free memory of the interpreter with empty data. All that amounts to one hellish language, which is simply impossible to work with. Only 3 programs have been written in Malbolge – all with the help of a computer. Even the creator of the language could not write ‘Hello, World’ in Malbolge. It took 2 years of code selection in Lisp to produce it.',NULL,'2024-01-31',1),(3,'How to get a job as a web developer','So, you\'re thinking about getting a full-time or part-time job as a web developer.','You want to be the architect of the internet, designing and developing the online experience for users. Well, buckle up (put on your belt), because we\'re about to break down the steps to becoming a web developer and getting a job. Imagine you\'re behind the scenes of the Terminator movie, making sure the acting and editing work flawlessly.','post2.png','2024-01-31',2),(4,'Sideway selection in CSS','Today I will teach you how to sideways select in CSS','Hi folks!Today I would like to share with you this codepen I created in order to showcase a simple but really cool use for the recently introduced \"has()\" selector. If you hover with your mouse over any of the emojis, you\'ll notice that not only the hovered emoji smoothly pops up, but its previous and next siblings also get affected a little bit, creating a very pleasant effect.',NULL,'2024-01-31',3);
+INSERT INTO `posts` VALUES (13,'Top 10 Front-End Tools of 2024','Who doesn\'t love a good front-end tool? In this roundup, you\'ll find useful front-end tools that were popular last year and will help you speed up your development workflow.','Hello Devs, It\'s a popular saying that a craftsman is as good as his tools and the same goes for Web Developers, both frontend and backend developers. Who doesn\'t love a good front-end tool? In this roundup, you\'ll find useful front-end tools that were popular last year and will help you speed up your development workflow. Let\'s dive in! Hello Devs, It\'s a popular saying that a craftsman is as good as his tools and the same goes for Web Developers, both frontend and backend developers. Hello Devs, It\'s a popular saying that a craftsman is as good as his tools and the same goes for Web Developers, both frontend and backend developers. Hello Devs, It\'s a popular saying that a craftsman is as good as his tools and the same goes for Web Developers, both frontend and backend developers.','http://res.cloudinary.com/duoh8s24o/image/upload/v1707386569/postimages/post1_fjpxrw.gif','2024-02-08',1),(14,'What is the most difficult coding language?','Malbolge - the most difficult language in the world','A language with no standard syntax, in which all commands are executed arbitrarily and the code is even encrypted. Malbolge works on a ternary number system, understands only 3 registers, and fills up the free memory of the interpreter with empty data. All that amounts to one hellish language, which is simply impossible to work with. Only 3 programs have been written in Malbolge – all with the help of a computer. Even the creator of the language could not write ‘Hello, World’ in Malbolge. It took 2 years of code selection in Lisp to produce it.',NULL,'2024-02-08',1),(15,'How to get a job as a web developer','So, you\'re thinking about getting a full-time or part-time job as a web developer.','You want to be the architect of the internet, designing and developing the online experience for users. Well, buckle up (put on your belt), because we\'re about to break down the steps to becoming a web developer and getting a job. Imagine you\'re behind the scenes of the Terminator movie, making sure the acting and editing work flawlessly.','http://res.cloudinary.com/duoh8s24o/image/upload/v1707386761/postimages/post2_pqghcn.png','2024-02-08',2),(16,'Sideways selection in CSS','Today I will teach you how to sideways select in CSS','Hi folks! Today I would like to share with you this codepen I created in order to showcase a simple but really cool use for the recently introduced \"has()\" selector. If you hover with your mouse over any of the emojis, you\'ll notice that not only the hovered emoji smoothly pops up, but its previous and next siblings also get affected a little bit, creating a very pleasant effect.',NULL,'2024-02-08',2);
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -69,7 +69,7 @@ CREATE TABLE `posts_tags` (
 
 LOCK TABLES `posts_tags` WRITE;
 /*!40000 ALTER TABLE `posts_tags` DISABLE KEYS */;
-INSERT INTO `posts_tags` VALUES (1,1),(3,1),(4,1),(2,2),(2,4),(1,5),(2,5),(4,5),(2,6),(3,6),(3,7),(3,8),(1,9);
+INSERT INTO `posts_tags` VALUES (13,1),(15,1),(16,1),(14,2),(16,3),(14,4),(13,5),(14,5),(16,5),(14,6),(15,6),(13,7),(15,7),(15,8),(13,9);
 /*!40000 ALTER TABLE `posts_tags` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,7 +121,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Diogo Agostinho','P@$$w0rd','diogoagostinho.jpg'),(2,'Bernardo Generoso','Camelo123','camel.jpg'),(3,'John Doe','palavrapasse','userprofile.jpg');
+INSERT INTO `users` VALUES (1,'Diogo Agostinho','P@$$w0rd','diogoagostinho.jpg'),(2,'Bernardo Generoso','Camelo123','camel.jpg');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -134,4 +134,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-31 17:48:02
+-- Dump completed on 2024-02-08 10:50:16

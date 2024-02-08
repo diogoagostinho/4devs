@@ -8,7 +8,6 @@ function HiddenSidebar() {
   const handleActivation = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     setIsActive(!isActive);
-    console.log(isActive);
   };
 
   return (
