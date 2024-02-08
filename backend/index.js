@@ -1,13 +1,14 @@
 import express from "express";
-import mysql from "mysql";
+//import mysql from "mysql";
 import cors from "cors";
+import mysql2 from "mysql2";
 
 //Database Connection
 const app = express();
-const database = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "P@$$w0rd",
+const database = mysql2.createConnection({
+  host: "database-4devs-instance.cx8680wagjic.eu-central-1.rds.amazonaws.com",
+  user: "admin",
+  password: "Pa$$w0rd",
   database: "database_4devs",
 });
 
