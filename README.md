@@ -20,6 +20,7 @@
   ![Mysql](https://img.shields.io/badge/MySQL-blue?style=for-the-badge&logo=mysql&logoColor=white)
   ![Express](https://img.shields.io/badge/Express-3a3b3a?style=for-the-badge&logo=express&logoColor=white)
   ![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)
+  ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
   
 </div>
 
