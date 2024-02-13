@@ -51,7 +51,9 @@ function PostForm() {
   useEffect(() => {
     const fetchLastPost = async () => {
       try {
-        const res = await axios.get("http://localhost:6969/lastpost");
+        const res = await axios.get(
+          "https://webapi.4devs.work4thenoob.pt/lastpost"
+        );
         post.postId = res.data.postId;
         posttag.postId = post.postId;
         if (post.postId && posttag.postId) {
@@ -89,7 +91,7 @@ function PostForm() {
         post.postImage = results.url;
       }
       try {
-        await axios.post("http://localhost:6969/posts", {
+        await axios.post("https://webapi.4devs.work4thenoob.pt/posts", {
           ...post,
           tagsIds: selectedTags,
         });
@@ -110,7 +112,9 @@ function PostForm() {
   useEffect(() => {
     const fetchAllTags = async () => {
       try {
-        const res = await axios.get("http://localhost:6969/tags");
+        const res = await axios.get(
+          "https://webapi.4devs.work4thenoob.pt/tags"
+        );
         setTag(res.data);
       } catch (err) {
         console.log(err);

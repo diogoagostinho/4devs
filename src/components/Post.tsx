@@ -22,7 +22,7 @@ function Post(props: {
     const fetchPostTags = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:6969/posttag/${props.postId}`
+          `https://webapi.4devs.work4thenoob.pt/posttag/${props.postId}`
         );
         setTags(res.data);
       } catch (err) {

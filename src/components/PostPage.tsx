@@ -17,7 +17,9 @@ function PostPage() {
   useEffect(() => {
     const fetchAllPosts = async () => {
       try {
-        const res = await axios.get(`http://localhost:6969/post/${postId}`);
+        const res = await axios.get(
+          `https://webapi.4devs.work4thenoob.pt/post/${postId}`
+        );
         if (res.data == "") {
           postRef.current = 0;
         } else {
@@ -32,7 +34,9 @@ function PostPage() {
 
     const fetchPostTags = async () => {
       try {
-        const res = await axios.get(`http://localhost:6969/posttag/${postId}`);
+        const res = await axios.get(
+          `https://webapi.4devs.work4thenoob.pt/posttag/${postId}`
+        );
         setTags(res.data);
       } catch (err) {
         console.log(err);

@@ -12,7 +12,9 @@ function TagPage() {
   useEffect(() => {
     const fetchAllPosts = async () => {
       try {
-        const res = await axios.get(`http://localhost:6969/tag/${tagId}`);
+        const res = await axios.get(
+          `https://webapi.4devs.work4thenoob.pt/tag/${tagId}`
+        );
         setPosts(res.data);
       } catch (err) {
         console.log(err);

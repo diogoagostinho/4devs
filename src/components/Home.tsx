@@ -17,7 +17,9 @@ function Home() {
   useEffect(() => {
     const fetchAllPosts = async () => {
       try {
-        const res = await axios.get("http://localhost:6969/posts");
+        const res = await axios.get(
+          "https://webapi.4devs.work4thenoob.pt/posts"
+        );
         setPosts(res.data);
         setLatestActive(true);
       } catch (err) {
@@ -30,7 +32,7 @@ function Home() {
   const handleLatest = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
-      const res = await axios.get("http://localhost:6969/posts");
+      const res = await axios.get("https://webapi.4devs.work4thenoob.pt/posts");
       setPosts(res.data);
       setLatestActive(true);
       setOldestActive(false);
@@ -43,7 +45,9 @@ function Home() {
   const handleOldest = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
-      const res = await axios.get("http://localhost:6969/posts/oldest");
+      const res = await axios.get(
+        "https://webapi.4devs.work4thenoob.pt/posts/oldest"
+      );
       setPosts(res.data);
       setLatestActive(false);
       setOldestActive(true);
@@ -56,7 +60,9 @@ function Home() {
   const handleAZ = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
-      const res = await axios.get("http://localhost:6969/posts/az");
+      const res = await axios.get(
+        "https://webapi.4devs.work4thenoob.pt/posts/az"
+      );
       setPosts(res.data);
       setLatestActive(false);
       setOldestActive(false);

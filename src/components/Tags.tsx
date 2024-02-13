@@ -13,7 +13,9 @@ function Tags() {
   useEffect(() => {
     const fetchAllTags = async () => {
       try {
-        const res = await axios.get("http://localhost:6969/tags");
+        const res = await axios.get(
+          "https://webapi.4devs.work4thenoob.pt/tags"
+        );
         setTags(res.data);
       } catch (err) {
         console.log(err);
